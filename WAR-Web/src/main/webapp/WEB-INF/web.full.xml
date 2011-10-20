@@ -1,0 +1,121 @@
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+  <display-name>WeFeelSecure Web Admin</display-name>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      classpath:/META-INF/spring/business-context.xml
+      classpath:/META-INF/spring/persistence-context.xml
+      classpath:/META-INF/spring/persistence-ibatis-context.xml
+      classpath:/META-INF/spring/business-cxf-context.xml
+      META-INF/spring/license-cxf-context.xml
+      META-INF/spring/scheduler-context.xml
+      META-INF/spring/security-context.xml
+      META-INF/spring/spring-aop-audittrail.xml
+    </param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <listener>  
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>  
+  </listener>  
+
+  <filter>
+    <filter-name>characterEncodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>forceEncoding</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>characterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>springSecurityFilterChain</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>Tiles Decoration Filter</filter-name>
+    <filter-class>org.apache.tiles.web.util.TilesDecorationFilter</filter-class>
+    <init-param>
+      <param-name>definition</param-name>
+      <param-value>test.definition</param-value>
+    </init-param>
+    <init-param>
+      <param-name>attribute-name</param-name>
+      <param-value>body</param-value>
+    </init-param>
+    <init-param>
+      <param-name>prevent-token</param-name>
+      <param-value>layout</param-value>
+    </init-param>
+  </filter>
+
+  <servlet>
+    <servlet-name>dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+        /META-INF/dispatcher-servlet.xml
+        /META-INF/presentation-jsp-context.xml
+      </param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>dispatcher</servlet-name>
+    <url-pattern>/secure/*</url-pattern>
+  </servlet-mapping>
+
+    <!-- Serves static resource content from .jar files such as spring-js.jar -->
+  <servlet>
+    <servlet-name>Resource Servlet</servlet-name>
+    <servlet-class>org.springframework.js.resource.ResourceServlet</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+
+  <!-- Map all /resources requests to the Resource Servlet for handling -->
+  <servlet-mapping>
+    <servlet-name>Resource Servlet</servlet-name>
+    <url-pattern>/resources/*</url-pattern>
+  </servlet-mapping>
+
+  <resource-ref>
+    <res-ref-name>jdbc/CCPROTECTION_DS</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  <error-page>
+  	<error-code>404</error-code>
+   	<location>/404.jsp</location>
+  </error-page>
+  
+  <error-page>
+  	<error-code>500</error-code>
+   	<location>/500.jsp</location>
+  </error-page>
+
+</web-app>
