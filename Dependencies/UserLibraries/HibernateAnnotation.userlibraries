@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="HibernateAnnotation" systemlibrary="false">
+        <archive path="D:/Projects/[Java Libraries]/commons-dbcp-1.4.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/hibernate-annotations.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/hibernate3.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.transaction-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.orm-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/ejb3-persistence.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.jdbc-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/commons-pool-1.5.4.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/hibernate-commons-annotations.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/jta-1.1.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/antlr-2.7.7.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/antlr-runtime-3.1.1.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/javassist-3.9.0.GA.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/commons-collections-3.2.1.jar"/>
+    </library>
+</eclipse-userlibraries>

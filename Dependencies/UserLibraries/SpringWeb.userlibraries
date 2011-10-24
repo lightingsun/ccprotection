@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="SpringWeb" systemlibrary="false">
+        <archive path="D:/Projects/[Java Libraries]/commons-logging-1.1.1.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.beans-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.core-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.web-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.web.servlet-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.context-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.context.support-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.asm-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/org.springframework.expression-3.0.5.RELEASE.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/commons-fileupload-1.2.1.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/antlr-runtime-3.1.1.jar"/>
+    </library>
+</eclipse-userlibraries>

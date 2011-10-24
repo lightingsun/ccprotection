@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="Tiles" systemlibrary="false">
+        <archive path="D:/Projects/[Java Libraries]/tiles-api-2.1.4.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/tiles-core-2.1.4.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/tiles-jsp-2.1.4.jar"/>
+        <archive path="D:/Projects/[Java Libraries]/tiles-servlet-2.1.4.jar"/>
+    </library>
+</eclipse-userlibraries>
