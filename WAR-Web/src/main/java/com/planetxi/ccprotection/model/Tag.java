@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@Table(name = "endUser")
+@Table(name = "tag")
 public class Tag {
 
 }

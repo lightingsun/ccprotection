@@ -4,51 +4,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<jsp:include page="../include/header.jsp"></jsp:include>
+<jsp:include page="../include/head.jsp"></jsp:include>
 <title>Register</title>
 <script type="text/javascript">
   $(document).ready(function() {
-
+    $("#licenseType").kendoDropDownList();
   });
+ 
 </script>
 </head>
 <body>
-  Welcome
-  <i>${endUserForm.username}</i>, You are new user of www.piecess.com. Please follow the step to register.
-  <br> Step 1 of 5.
-  <br> Please enter your information
-  <form:form modelAttribute="signForm" action="${pageContext.request.contextPath}/main/sign/verify">
-    <form:hidden path="refererUrl" />
-    <table>
-      <tr>
-        <td>Username:</td>
-        <td><form:input path="username" readonly="true" /> <form:errors path="username" />
-        </td>
-      </tr>
-      <tr>
-        <td>Password:</td>
-        <td><form:password path="password" /> <form:errors path="password" />
-        </td>
-      </tr>
-      <tr>
-        <td>Category:</td>
-        <td>
-          &nbsp;
-        </td>
-      <tr>
-      <tr>
-        <td>License Type:</td>
-        <td>
-          <form:select path="licenseType">
-            <form:options items="${licenseTypes}" itemLabel="description" />  
-          </form:select>
-        </td>
-      <tr>
-        <td>&nbsp;</td>
-        <td><input type="submit" value="Next" />
-        </td>
-      </tr>
-    </table>
-  </form:form>
+  <jsp:include page="../include/header.jsp"></jsp:include>
+  Welcome <i>${signForm.username}</i>, You are about to sign your content from website <a href="${signForm.refererUrl}">${signForm.refererUrl}</a>.
+  <div id="panel" class="k-content" style="width:650px">
+    <form:form modelAttribute="signForm" action="${pageContext.request.contextPath}/main/sign/verify">
+      <h2>Please enter your password and select your license type</h2>
+      <table>
+        <tr>
+          <td align="right">Username:</td>
+          <td><form:input path="username" readonly="true" /> <form:errors path="username" />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Password:</td>
+          <td><form:password path="password" /> <form:errors path="password" />
+          </td>
+        </tr>
+        <tr>
+          <td align="right">Category:</td>
+          <td>
+            &nbsp;
+          </td>
+        <tr>
+        <tr>
+          <td align="right">License Type:</td>
+          <td>
+            <form:select path="licenseType" cssStyle="width:350px">
+              <form:options items="${licenseTypes}" itemLabel="description" />  
+            </form:select>
+          </td>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="submit" value="Sign" class="k-button" />
+          </td>
+        </tr>
+      </table>
+    </form:form>
+  </div>
+  <jsp:include page="../include/footer.jsp"></jsp:include>
 </body>
 </html>

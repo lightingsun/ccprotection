@@ -1,1 +1,38 @@
 @CHARSET "UTF-8";
+
+form {
+	margin: 20px;
+}
+
+form h1 {
+	font-size: 110%;
+}
+
+form h2 {
+	font-size: 100%;
+	font-weight: bold;
+}
+
+.header {
+	background-color: rgb(223, 223, 223);
+}
+
+.line {
+	margin-bottom: 6px;
+	height: 8px;
+	width: 100%;
+	background-color: #eb652b;
+}
+
+#panel {
+	margin: 5px;
+	padding: 5px;
+	background-color: rgb(242, 242, 242);
+	border-style: solid;
+	border-width: 1px;
+	border-color: #dedede;
+	border-width: 1px;
+	border-radius: 15px;
+	background-color: rgb(242, 242, 242);
+	padding: 5px;
+}

@@ -14,6 +14,7 @@
     <property name="annotatedClasses">
       <list>
         <value>com.planetxi.ccprotection.model.EndUser</value>
+        <value>com.planetxi.ccprotection.model.PersonalInformation</value>
         <value>com.planetxi.ccprotection.model.Signature</value>
       </list>
     </property>

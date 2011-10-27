@@ -1,10 +1,14 @@
 package com.planetxi.ccprotection.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -27,6 +31,10 @@ public class EndUser {
 
     @Column(name = "email")
     private String email;
+
+    @OneToOne 
+    @PrimaryKeyJoinColumn 
+    private PersonalInformation personalInformation = new PersonalInformation();
 
     @Column(name = "signatureImageData", length = 500000)
     private byte[] signatureImageData;
@@ -69,6 +77,14 @@ public class EndUser {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public PersonalInformation getPersonalInformation() {
+        return personalInformation;
+    }
+
+    public void setPersonalInformation(PersonalInformation personalInformation) {
+        this.personalInformation = personalInformation;
     }
 
     public byte[] getSignatureImageData() {

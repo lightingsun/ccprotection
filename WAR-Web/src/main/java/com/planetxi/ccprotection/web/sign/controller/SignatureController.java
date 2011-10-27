@@ -16,8 +16,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.planetxi.ccprotection.model.EndUser;
 import com.planetxi.ccprotection.model.Signature;
@@ -46,14 +46,14 @@ public class SignatureController {
      * @param model
      * @return
      */
-    @RequestMapping("/signature")
-    public String signSignature(@RequestParam(required = true) String username, HttpServletRequest request, Model model) {
+    @RequestMapping("/signature/{username}")
+    public String signSignature(@PathVariable("username") String username, HttpServletRequest request, Model model) {
 
         Signature signature = getSignature(request, username);
 
         if (signature != null) {
             model.addAttribute("signature", signature);
-        }else{
+        } else {
             model.addAttribute("username", username);
         }
 
@@ -67,11 +67,11 @@ public class SignatureController {
      * @param response
      * @param model
      */
-    @RequestMapping("/signature/image")
-    public void viewSignatureImage(@RequestParam(required = true) String username, HttpServletRequest request, HttpServletResponse response, Model model) {
+    @RequestMapping("/signature/{username}/image")
+    public void viewSignatureImage(@PathVariable("username") String username, HttpServletRequest request, HttpServletResponse response, Model model) {
 
         EndUser endUser = endUserRepository.findByUsername(username);
-        
+
         byte[] imageData = endUser.getSignatureImageData();
         ByteArrayInputStream bin = new ByteArrayInputStream(imageData);
 

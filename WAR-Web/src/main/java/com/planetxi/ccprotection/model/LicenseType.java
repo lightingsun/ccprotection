@@ -9,7 +9,7 @@ package com.planetxi.ccprotection.model;
  */
 public enum LicenseType {
 
-    CopyRight("Copy Right"), CcNc("Creative Common: Non-Commercial"), CcNcNd("Creative Common: Non-Commercial and No Derivative Works");
+    CopyLeft("Copy Left"), CcNc("Creative Common: Non-Commercial"), CcNcNd("Creative Common: Non-Commercial and No Derivative Works"), CopyRight("Copy Right");
 
     private String description;
 

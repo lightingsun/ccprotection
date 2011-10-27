@@ -10,6 +10,6 @@
 Hi I'm writitng this content for every people who are using the HTML5.<br/>
 You can use CSS3 also!! <br/>
 
-<script src="http://localhost:8080/WAR-Web/main/signature?username=muzaKo"></script>
+<script src="http://localhost:8080/WAR-Web/main/signature/muzaKo5"></script>
 </body>
 </html>
